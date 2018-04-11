@@ -71,25 +71,25 @@ jobs:
     - do:
       - put: stratos-firehose-exporter
         params:
-          dockerfile: stratos-metrics/build/Dockerfile.firehose-exporter
+          dockerfile: stratos-metrics/build/Dockerfile.dummy
           build: stratos-metrics/build/
           tag: stratos-metrics/build/dev-release-tag
           tag_commit: true
       - put: stratos-firehose-init
         params:
-          dockerfile: stratos-metrics/build/Dockerfile.firehose-init
+          dockerfile: stratos-metrics/build/Dockerfile.dummy
           build: stratos-metrics/build/
           tag: stratos-metrics/build/dev-release-tag
           tag_commit: true
       - put: stratos-metrics-nginx
         params:
-          dockerfile: stratos-metrics/build/Dockerfile.nginx
+          dockerfile: stratos-metrics/build/Dockerfile.dummy
           build: stratos-metrics/build/
           tag: stratos-metrics/build/dev-release-tag
           tag_commit: true
       - put: stratos-prometheus
         params:
-          dockerfile: stratos-metrics/build/Dockerfile.prometheus
+          dockerfile: stratos-metrics/build/Dockerfile.dummy
           build: stratos-metrics/build/
           tag: stratos-metrics/build/dev-release-tag
           tag_commit: true
